@@ -1,11 +1,15 @@
 # Speedtestplusplus
 
+![Dashboard](https://www.valki.com/wp-content/uploads/2020/04/2020-04-05-11_31_05-Install-Cloud-Server-OneNote-1024x441.png.webp)
+
+
 A easy to setup speedtest worker for speedtest.net based on speedtestplusplus (https://github.com/taganaka/SpeedTest). 
 
 As this supports raw tcp it can act as *a more precise replacement* for the "standard" speedtest.net collector https://hub.docker.com/r/atribe/speedtest-for-influxdb-and-grafana/
 
 Be nice, this is my first repo.
 
+Blog: https://www.valki.com/dockerized-speedtest/
 
 # Installation instructions
 ## Pull and Build the image - optional (as you may pull this image from dockerhub too)
