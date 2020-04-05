@@ -29,7 +29,7 @@ then enter the created repo and build your image
 ## Set up your docker network
 To tangle everything together please create a network for your containers called speedtestnet. You can click through a tool like portainer or just use the docker command somehow like this:
 ```
-docker network create speedtestnet --driver=bridge --subnet=	172.29.99.0/22 --ip-range=172.29.99.0/25 --gateway=172.29.99.1 
+docker network create speedtestnet --driver=bridge --subnet=172.29.99.0/22 --ip-range=172.29.99.0/25 --gateway=172.29.99.1 
   ```
     
 ## Fire up the docker containers
