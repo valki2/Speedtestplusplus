@@ -5,7 +5,7 @@
 
 A easy to setup speedtest worker for speedtest.net based on speedtestplusplus (https://github.com/taganaka/SpeedTest). 
 
-As this supports raw tcp it can act as *a more precise replacement* for the "standard" speedtest.net collector https://hub.docker.com/r/atribe/speedtest-for-influxdb-and-grafana/
+As this supports raw tcp and aggresive multithreading it can act as *a more precise replacement* for the "standard" speedtest.net collector https://hub.docker.com/r/atribe/speedtest-for-influxdb-and-grafana/ which are all based on the speedtest-cli by swivel.
 
 Be nice, this is my first repo.
 
