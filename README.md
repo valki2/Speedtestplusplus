@@ -4,6 +4,8 @@ A easy to setup speedtest worker for speedtest.net based on speedtestplusplus (h
 
 As this supports raw tcp it can act as *a more precise replacement* for the "standard" speedtest.net collector https://hub.docker.com/r/atribe/speedtest-for-influxdb-and-grafana/
 
+Be nice, this is my first repo.
+
 
 # Installation instructions
 ## Pull and Build the image - optional (as you may pull this image from dockerhub too)
