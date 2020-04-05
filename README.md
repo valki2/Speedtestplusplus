@@ -15,7 +15,7 @@ then enter the created repo and build your image
 
 `cd Speedtestplusplus`
 
-`docker build --tag="valki:speedtestplusplus" .`
+`docker build --tag="valki/speedtestplusplus" .`
 
 
 ## Set up your docker network
