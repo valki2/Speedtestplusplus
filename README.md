@@ -29,13 +29,14 @@ First we need an influxdb container... or feel free to use your own instead!
 
 `docker run --name influxdb --hostname influxdb --net speedtestnet  -d --restart always -e INFLUXDB_ADMIN_USER=admin -e INFLUXDB_ADMIN_PASSWORD=password -e INFLUXDB_DB=speedtest -v speedtest_influxdb:/var/lib/influxdb influxdb:1.5`
 
-Then you may want a grafana instance for your funny little trees eeeh dashboard...
-
-`docker run --name grafana  --hostname grafana  --net speedtestnet -d --restart always -p 3000:3000 -v speedtest_grafana:/etc/grafana/provisioning -v grafana-storage:/var/lib/grafana -e GF_SERVER_ROOT_URL=http://localhost -e GF_SECURITY_ADMIN_PASSWORD=admin -e GF_AUTH_ANONYMOUS_ENABLED=true grafana/grafana:latest`
-
 Finally fire up your speedtestplusplus worker container
 
 `docker run -d --name=speedtest --net speedtestnet -d --restart always  -e SPEEDTEST_INTERVAL=600 -e SPEEDTEST_HOST=local  valki/speedtestplusplus`
+
+## Grafana - optional
+You may want a grafana instance for your funny little trees eeeh dashboard...
+
+`docker run --name grafana  --hostname grafana  --net speedtestnet -d --restart always -p 3000:3000 -v speedtest_grafana:/etc/grafana/provisioning -v grafana-storage:/var/lib/grafana -e GF_SERVER_ROOT_URL=http://localhost -e GF_SECURITY_ADMIN_PASSWORD=admin -e GF_AUTH_ANONYMOUS_ENABLED=true grafana/grafana:latest`
 
 ##Configure Grafana Dashboard
 1. Login with admin:admin and set a new password!
