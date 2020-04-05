@@ -35,7 +35,7 @@ Then you may want a grafana instance for your funny little trees eeeh dashboard.
 
 Finally fire up your speedtestplusplus worker container
 
-`docker run -d --name=speedtest --net speedtestnet -d --restart always  -e SPEEDTEST_INTERVAL=600 -e SPEEDTEST_HOST=local  valki:speedtestplusplus`
+`docker run -d --name=speedtest --net speedtestnet -d --restart always  -e SPEEDTEST_INTERVAL=600 -e SPEEDTEST_HOST=local  valki/speedtestplusplus`
 
 ##Configure Grafana Dashboard
 1. Login with admin:admin and set a new password!
