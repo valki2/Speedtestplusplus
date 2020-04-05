@@ -10,6 +10,8 @@ As this supports raw tcp it can act as *a more precise replacement* for the "sta
 Be nice, this is my first repo.
 
 Blog: https://www.valki.com/dockerized-speedtest/
+Image @ Dockerhub: https://hub.docker.com/repository/docker/valki/speedtestplusplus
+Github Sources: https://github.com/valki2/Speedtestplusplus
 
 # Installation instructions
 ## Pull and Build the image - optional (as you may pull this image from dockerhub too)
