@@ -18,7 +18,7 @@ then enter the created repo and build your image
 `docker build --tag="valki:speedtestplusplus" .`
 
 
-## set up your docker network
+## Set up your docker network
 To tangle everything together please create a network for your containers called speedtestnet. You can click through a tool like portainer or just use the docker command somehow like this:
 ```
 docker network create \
