@@ -38,7 +38,7 @@ You may want a grafana instance for your funny little trees eeeh dashboard...
 
 `docker run --name grafana  --hostname grafana  --net speedtestnet -d --restart always -p 3000:3000 -v speedtest_grafana:/etc/grafana/provisioning -v grafana-storage:/var/lib/grafana -e GF_SERVER_ROOT_URL=http://localhost -e GF_SECURITY_ADMIN_PASSWORD=admin -e GF_AUTH_ANONYMOUS_ENABLED=true grafana/grafana:latest`
 
-##Configure Grafana Dashboard
+## Configure Grafana Dashboard
 1. Login with admin:admin and set a new password!
 2. Create a new dashboard with the attached json code
 
