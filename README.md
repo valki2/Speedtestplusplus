@@ -7,7 +7,9 @@ As this supports raw tcp it can act as *a more precise replacement* for the "sta
 
 # Installation instructions
 ## Pull and Build the image - optional (as you may pull this image from dockerhub too)
-`git pull https://github.com/valki2/Speedtestplusplus`
+`git clone https://github.com/valki2/Speedtestplusplus`
+
+then enter the created repo and build your image
 
 `docker build --tag="valki:speedtestplusplus"`
 
