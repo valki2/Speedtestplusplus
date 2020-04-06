@@ -41,6 +41,11 @@ Finally fire up your speedtestplusplus worker container
 
 `docker run -d --name=speedtest --net speedtestnet -d --restart always  -e SPEEDTEST_INTERVAL=600 -e SPEEDTEST_HOST=local  valki/speedtestplusplus`
 
+SPEEDTEST_HOST is to distinct multiple instances in one database
+SPEEDTEST_INTERVALL is the time in seconds between the tests
+TESTSERVER is use a specific testserver (https://telcodb.net/explore/speedtest-servers/) instead of letting the tool find the best one.
+Example: -e TESTSERVER=speedtest.telfs.com:8080 
+
 ## Optional - Grafana
 You may want a grafana instance for your funny little trees eeeh dashboard...
 
