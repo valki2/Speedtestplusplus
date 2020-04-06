@@ -1,8 +1,13 @@
 #!/bin/bash
 
 while :; do
-	echo "[Info][$(date)] Starting SpeedTest++..."
-	JSON=$(./SpeedTest/SpeedTest --output json)
+	if [[ -z "${TESTSERVER}" ]]; then
+	 	echo "[Info][$(date)] Starting SpeedTest++..."
+		JSON=$(./SpeedTest/SpeedTest  --output json)
+	else
+ 		echo "[Info][$(date)] Starting SpeedTest++ with specific testerver ${TESTSERVER}..."
+ 		JSON=$(./SpeedTest/SpeedTest --test-server=${TESTSERVER} --output json)
+	fi
 	DOWNLOAD=$(echo ${JSON} | jq -r .download)
 	UPLOAD=$(echo ${JSON} | jq -r .upload)
 	PING=$(echo ${JSON} | jq -r .ping)
