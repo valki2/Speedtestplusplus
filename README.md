@@ -46,7 +46,6 @@ SPEEDTEST_HOST is to distinct multiple instances in one database
 SPEEDTEST_INTERVALL is the time in seconds between the tests
 
 TESTSERVER is use a specific testserver (https://telcodb.net/explore/speedtest-servers/) instead of letting the tool find the best one.
-
 Example: -e TESTSERVER=speedtest.telfs.com:8080 
 
 ## Optional - Grafana
