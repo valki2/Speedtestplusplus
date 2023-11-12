@@ -1,0 +1,70 @@
+version: "3.6"
+services:
+  speedtest_once:
+    container_name: speedtest_once
+    environment:
+      - SPEEDTEST_INTERVAL=600
+      - SPEEDTEST_HOST=local
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - INFLUXDB_DB=speedtest
+      - INFLUXDB_URL=http://influxdb:8086
+    image: valki/speedtestplusplus:once
+    networks:
+      - speedtestnet
+#    restart: always
+  
+  influxdb:
+    command:
+      - influxd    
+    container_name: influxdb
+    environment:
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=password
+      - INFLUXDB_DB=speedtest
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - INFLUXDB_VERSION=1.5.4
+    expose:
+      - 8086/tcp
+    hostname: influxdb
+    image: influxdb:1.5
+    networks:
+      - speedtestnet
+    restart: always
+    volumes:
+      - speedtest_influxdb:/var/lib/influxdb
+      
+  grafana:
+    container_name: grafana
+    environment:
+      - GF_SERVER_ROOT_URL=http://localhost
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - PATH=/usr/share/grafana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - GF_PATHS_CONFIG=/etc/grafana/grafana.ini
+      - GF_PATHS_DATA=/var/lib/grafana
+      - GF_PATHS_HOME=/usr/share/grafana
+      - GF_PATHS_LOGS=/var/log/grafana
+      - GF_PATHS_PLUGINS=/var/lib/grafana/plugins
+      - GF_PATHS_PROVISIONING=/etc/grafana/provisioning
+    hostname: grafana
+    image: grafana/grafana:latest
+    networks:
+      - speedtestnet
+    ports:
+      - 60030:3000/tcp
+    restart: always
+    volumes:
+      - speedtest_grafana:/etc/grafana/provisioning
+      - grafana-storage:/var/lib/grafana
+    
+networks:
+  speedtestnet:
+    external: true
+    name: speedtestnet
+volumes:
+  speedtest_influxdb:
+    external: true
+  grafana-storage:
+    external: true
+  speedtest_grafana:
+    external: true
