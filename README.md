@@ -61,6 +61,8 @@ You may want a grafana instance for your funny little trees eeeh dashboard...
 In case your connection is very unstable, it is possible that the container just hangs there and no test can finish. 
 For that reason i created another tag "_once" - instead of using the cron inside of the container, this flavour uses your hosts cronjob to call a shellscript which launches the speedtest container. After each run, the container is exited and removed before the next launch. 
 
+Just use the "_once" docker-compose file and rename it, then fire up with docker compose as usual.
+
 Exemplary cronjob on your host: */10 * * * *  /share/Backup/docker/speedtest/exec_speedtest.sh >/dev/null 2>&1
 
 
