@@ -11,7 +11,7 @@ WORKDIR /app
 RUN apt-get update \
     && apt-get install build-essential libcurl4-openssl-dev libxml2-dev libssl-dev cmake git jq curl -y \
     && rm -rf /var/lib/apt/lists/* 
-RUN git clone https://github.com/taganaka/SpeedTest \
+RUN git clone https://github.com/axel8viii/SpeedTest \
     && cd SpeedTest \
     && cmake -DCMAKE_BUILD_TYPE=Release . \
     && make install
